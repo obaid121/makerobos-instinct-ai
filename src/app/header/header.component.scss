@@ -1,0 +1,40 @@
+.site-header {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    box-shadow: 0 4px 6px -7px black;
+    color: #222;
+
+    .site-nav {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        .logo {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #222;
+            font-weight: 700;
+        }
+    
+        .site-text {
+            line-height: 1.2rem;
+            color: #959595;
+            font-weight: 400;
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        gap: 15px;
+    }
+}
+

@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+.w-50 {
+    width: 50%;
+}
+.w-60 {
+    width: 60%;
+}
+.w-70 {
+    width: 70%;
+}
+.w-80 {
+    width: 80%;
+}
+.w-85 {
+    width: 85%;
+}
+.w-90 {
+    width: 90%;
+}
+.w-100 {
+    width: 100%;
+}
+
+.textGray {
+    color: #959595;
+    font-size: 14px;
+}
+
+// Modal css
+.modal-dialog .modal-content {
+    border-radius: 2px;
+    width: 43rem;
+}
+.modal-content .modal-body {
+    padding: 1rem 2.5rem;
+}
+
+input {
+    padding: 3px;
+    border: 1px solid black;
+}

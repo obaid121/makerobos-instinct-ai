@@ -1,0 +1,188 @@
+.site-main {
+    display: flex;
+    height: 90vh;
+
+    .sidebar {
+        background-color: #f2f2f2;
+        padding: 2rem;
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            height: 7rem;
+            border: 5px solid transparent;
+            border-radius: 3px;
+            border-left-color: #00826B;
+            padding: .6rem;
+
+            .title {}
+
+            .description {
+                line-height: 1.2rem;
+                color: #959595;
+                font-weight: 400;
+                margin: 0;
+            }
+        }
+    }
+
+    .main {
+        padding: 2.5rem;
+
+        .header {
+
+            .addButton {
+                margin-top: 8px;
+                padding: 0.4rem 0.5rem;
+                font-size: 15px;
+                background-color: #00826B;
+                color: #fff;
+                border-radius: 2px;
+                border: none;
+
+                i {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .insights {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .clearAllButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 7px;
+                background-color: #fff;
+                border-radius: 2px;
+                border: 1px solid gray;
+                padding: 3px 8px;
+                font-size: 12px;
+            }
+
+            .sort {
+                display: flex;
+                gap: 10px;
+            }
+        }
+
+        .card {
+            border-radius: 2px;
+
+            .cardContent {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .oneSide {
+                    display: flex;
+                    flex-direction: column;
+                    line-height: 1.7rem;
+
+                    .badge {
+                        width: 100px;
+                        height: 100%;
+                        border: 1px solid red;
+                        background-color: #FFEBF0;
+                        color: #ED727D;
+                        margin-bottom: .2rem;
+                    }
+
+                    .ellipsis {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 12rem;
+                    }
+                }
+
+                .twoSide {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    .buttonMap {
+                        padding: 2px 8px;
+                        border: 1px solid gray;
+                        border-radius: 2px;
+                        background-color: #fff;
+                    }
+
+                    .buttonAdd {
+                        padding: 2px 8px;
+                        border: 1px solid gray;
+                        border-radius: 2px;
+                        background-color: #fff;
+                        align-self: flex-end;
+                    }
+
+                    i {
+                        align-self: flex-end;
+                        font-size: 20px;
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+
+.dropdown {
+    padding: 4px 18px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.modalClose {
+    padding: 2px 20px;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.addButtonModal {
+    background-color: #F2F2F2;
+    padding: 3px 8px;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.addUtterance {
+    .textGray {
+        line-height: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+form .createButton {
+    position: relative;
+}
+.createButton {
+    margin-top: 8px;
+    padding: 0.4rem 2rem;
+    font-size: 15px;
+    background-color: #00826B;
+    color: #fff;
+    border-radius: 2px;
+    border: none;
+    position: absolute;
+    left: 50%;
+}
+
+.deleteBox {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 0.7rem;
+}
+
+.tables {
+    border: 1px solid gray;
+}

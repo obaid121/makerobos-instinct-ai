@@ -1,0 +1,256 @@
+<div class="site-main">
+  <div class="col-md-3 sidebar">
+    <div class="box" (click)="changeTab('Train your bot')">
+      <h5 class="title">Train your bot</h5>
+      <p class="description">
+        Improve performance by providing user utterance or frequently asked
+        questions.
+      </p>
+    </div>
+    <hr />
+
+    <div class="box" (click)="changeTab('Intents')">
+      <h5 class="title">Intents</h5>
+      <p class="description">
+        View all answers you have created to improve the bot performance
+      </p>
+    </div>
+    <hr />
+
+    <div class="box" (click)="changeTab('Catch all')">
+      <h5 class="title">Catch all</h5>
+      <p class="description">
+        Setup flows to handle unanswered or not helpful responses
+      </p>
+    </div>
+    <hr />
+
+    <div class="box" (click)="changeTab('Analytics')">
+      <h5 class="title">Analytics</h5>
+      <p class="description">
+        Learn how your bot is performing and how you can make it better
+      </p>
+    </div>
+    <hr />
+  </div>
+  <div class="col-md-9 main">
+    <div class="col-7">
+      <div *ngIf="firstTab">
+        <div class="header">
+          <h5 class="fw-bold m-0">Add a new utterance</h5>
+          <div class="textGray fs-6">
+            Create an intent and add multiple utterance to let Instinct AI
+            answers automatically
+          </div>
+          <button class="addButton" (click)="open(content)">
+            <i class="fa-regular fa-plus me-2"></i>Add intent
+          </button>
+        </div>
+        <hr class="textGray" />
+
+        <div class="insights">
+          <div class="d-flex gap-2">
+            <span class="fw-bold">Insights</span>
+            <button class="clearAllButton">
+              <i class="fa-regular fa-trash"></i>
+              <span class="vr"></span> Clear all
+            </button>
+          </div>
+
+          <div class="sort">
+            <span class="fw-bold">Sort by</span>
+            <select class="dropdown" name="" id="">
+              <option value="">Priority</option>
+            </select>
+          </div>
+        </div>
+        <hr class="textGray" />
+
+        <div class="card">
+          <div class="card-body">
+            <div class="cardContent">
+              <div class="oneSide">
+                <div class="badge">Unanswered</div>
+                <div title="this is title" class="fw-bold ellipsis">
+                  Do you deal in real state
+                </div>
+                <span class="textGray">Asked 32 times last week</span>
+              </div>
+              <div class="twoSide">
+                <button class="buttonMap">Map to existing reply</button>
+                <button class="buttonAdd">Add reply</button>
+                <i class="fa-regular fa-calendar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="secondTab"></div>
+
+      <div *ngIf="thirdTab">
+        <h5>Catch all</h5>
+        <div
+          class="textGray fs-6"
+          style="line-height: 1.2rem; margin-bottom: 1rem"
+        >
+          When instinct AI fails to understand user utterance, you can choose
+          one of the option to manage bot failure without degrading user
+          experience
+        </div>
+        <select name="" id="" class="dropdown mb-3">
+          <option value="">Human Handoff</option>
+        </select>
+
+        <div class="addReply mb-5">
+          <h5>Add reply</h5>
+          <textarea
+            placeholder="Bot says"
+            name="addreply"
+            id="addreply"
+            cols="30"
+            rows="3"
+            class="w-100 mb-3"
+          ></textarea>
+          <button class="addButtonModal">
+            <i class="fa-regular fa-plus me-2"></i>Add random message
+          </button>
+        </div>
+
+        <div>
+          <h5>Human Handoff</h5>
+          <select name="humanhandoff" class="dropdown" id="humanhandoff">
+            <option value="">Assign Agent</option>
+          </select>
+        </div>
+      </div>
+
+      <div *ngIf="fourthTab">
+
+        <h5>Summary</h5>
+        <div class="textGray" style="line-height: 1.2rem; margin-bottom: 1rem">
+          Discover which intents are most regularly queried and gain a deeper
+          understanding into the interest of your user.
+        </div>
+        <div class="tables">
+          <div class="searchBox p-3 position-relative">
+            <input type="text" placeholder="search intent or utterance" style="padding: 3px 30px;" />
+            <i class="fa-solid fa-magnifying-glass position-absolute" style="left: 23px; top: 25px"></i>
+          </div>
+          <table class="table table-borderless">
+            <thead class="" style="background-color: #dcf9f5">
+              <tr>
+                <th scope="col">Intent</th>
+                <th scope="col">Messages</th>
+                <th scope="col">Importance</th>
+                <th scope="col">Accuracy</th>
+                <th scope="col">Catch all</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Greetings</th>
+                <td>102</td>
+                <td>98%</td>
+                <td>1</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <th scope="row">Bye</th>
+                <td>54</td>
+                <td>2%</td>
+                <td>.5</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <th scope="row">Office hours</th>
+                <td>10</td>
+                <td>5%</td>
+                <td>8</td>
+                <td>3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+//Modal
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <div class="d-flex align-items-center justify-content-between mb-2">
+      <div>
+        <h5 class="m-0">Intent name</h5>
+        <span class="textGray"
+          >Intent represent a task that instinct AI needs to carry out.</span
+        >
+      </div>
+      <button
+        type="button"
+        class="modalClose"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      >
+        Close
+      </button>
+    </div>
+    <form class="w-85">
+      <div class="mb-3">
+        <input type="text" name="" id="" />
+      </div>
+
+      <div class="addUtterance d-flex flex-column mb-3">
+        <h5>Add utterance</h5>
+        <div class="textGray">
+          Create atleast 5 variations to allow Makerobos's Natural language
+          Understanding (NLU) to automatically match intents with user input.
+          The more utterance you enter, the better chance this intent will be
+          matched.
+        </div>
+        <input type="text" name="" id="" class="mb-2" />
+        <div class="position-relative">
+          <input type="text" name="" id="" class="w-100 mb-3" />
+          <span class="deleteBox position-absolute"
+            ><i class="fa-solid fa-trash-can"></i
+          ></span>
+        </div>
+
+        <button class="addButtonModal align-self-start">
+          <i class="fa-regular fa-plus me-2"></i>Add another variation
+        </button>
+      </div>
+      <div class="addReply mb-5">
+        <h5>Add reply</h5>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="3"
+          class="w-100 mb-3"
+        ></textarea>
+        <button class="addButtonModal">
+          <i class="fa-regular fa-plus me-2"></i>Add random message
+        </button>
+      </div>
+      <button type="button" class="createButton mt-3">Create Intent</button>
+    </form>
+  </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+: In 1804, M. Myriel was the Curé of B—— [Brignolles]. He was already advanced in years, and lived in a very retired manner. About the epoch of the coronation, some petty affair connected with his curacy—just what, is not precisely known—took him to Paris.
+
+
+: In 1804, M. Myriel was the Curé of B—— [Briggnoles]. He was already advanced in years, and lived in very retired manner. About the epoch of the coronation, some petty affair connected with his curacy—just what is not precisely known took him to Paris.
